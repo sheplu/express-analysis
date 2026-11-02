@@ -1,0 +1,38 @@
+{
+  "node": "v24.19.0",
+  "responseContentEncoding": "gzip",
+  "afterRequire": {
+    "protoWriteSame": true,
+    "protoEndSame": true,
+    "protoWriteHeadSame": true,
+    "protoOnSame": true,
+    "gzipDestroySame": true,
+    "bufferModulePropsSame": true,
+    "safeBufferIsCoreBufferModule": true,
+    "outgoingHasFlushMethod": false
+  },
+  "instance": {
+    "pre": {
+      "writeOwn": false,
+      "endOwn": false,
+      "onOwn": false,
+      "flushOwn": false,
+      "writeHeadOwn": false
+    },
+    "post": {
+      "writeOwnOverride": true,
+      "endOwnOverride": true,
+      "onOwnOverride": true,
+      "flushOwnNewMethod": true,
+      "writeHeadOwnOverride": true,
+      "writeHeadWrapperName": "writeHead"
+    }
+  },
+  "afterRequest": {
+    "protoWriteSame": true,
+    "protoEndSame": true,
+    "protoWriteHeadSame": true,
+    "protoOnSame": true,
+    "gzipDestroySame": true
+  }
+}

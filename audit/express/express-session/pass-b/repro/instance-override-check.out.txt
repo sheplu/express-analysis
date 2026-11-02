@@ -1,0 +1,24 @@
+$ node repro/instance-override-check.js "$PACKAGE_ROOT"
+(runtime: Node.js v24.19.0)
+
+after require(express-session):
+  OutgoingMessage.prototype.end unchanged: true
+  OutgoingMessage.prototype.write unchanged: true
+  ServerResponse.prototype.writeHead unchanged: true
+  Error.prepareStackTrace restored: true
+  Error.stackTraceLimit restored: true
+Sun, 01 Nov 2026 14:11:48 GMT express-session deprecated undefined resave option; provide resave option at instance-override-check.js:36:1
+Sun, 01 Nov 2026 14:11:48 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at instance-override-check.js:36:1
+after deprecation fired:
+  Error.prepareStackTrace restored: true
+  Error.stackTraceLimit restored: true
+during request (inside middleware next):
+  res has own "end": true
+  res has own "writeHead": true
+  res.end !== OutgoingMessage.prototype.end: true
+  res.writeHead !== ServerResponse.prototype.writeHead: true
+  shared prototype end still unchanged: true
+  shared prototype writeHead still unchanged: true
+  req has own "session": true
+  req has own "sessionStore": true
+done
