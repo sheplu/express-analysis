@@ -1,0 +1,511 @@
+{
+  "nodeVersion": "v24.19.0",
+  "phases": {
+    "importTimeTrapLog": [
+      {
+        "prop": "Error.prepareStackTrace",
+        "op": "set",
+        "newValue": "function:prepareObjectStackTrace"
+      },
+      {
+        "prop": "Error.captureStackTrace",
+        "op": "call",
+        "stackTraceLimitInForce": 10
+      },
+      {
+        "prop": "Error.prepareStackTrace",
+        "op": "set",
+        "newValue": "function:ErrorPrepareStackTrace"
+      },
+      {
+        "prop": "Error.prepareStackTrace",
+        "op": "set",
+        "newValue": "function:prepareObjectStackTrace"
+      },
+      {
+        "prop": "Error.captureStackTrace",
+        "op": "call",
+        "stackTraceLimitInForce": 10
+      },
+      {
+        "prop": "Error.prepareStackTrace",
+        "op": "set",
+        "newValue": "function:ErrorPrepareStackTrace"
+      },
+      {
+        "prop": "Error.stackTraceLimit",
+        "op": "final-observed-value (sentinel was 3)",
+        "value": 3,
+        "restoredBySubject": true
+      }
+    ],
+    "httpExercise": {
+      "setCookieHeaders": [
+        "session=value123; path=/; httponly",
+        "session.sig=hTh6dFNQzkG_WRUoIEfc2QIYKLg; path=/; httponly"
+      ],
+      "roundTrip": "value123",
+      "verified": true
+    },
+    "runtimeTrapLog": [
+      {
+        "prop": "Error.prepareStackTrace",
+        "op": "set",
+        "newValue": "function:prepareObjectStackTrace"
+      },
+      {
+        "prop": "Error.captureStackTrace",
+        "op": "call",
+        "stackTraceLimitInForce": 10
+      },
+      {
+        "prop": "Error.prepareStackTrace",
+        "op": "set",
+        "newValue": "function:ErrorPrepareStackTrace"
+      },
+      {
+        "prop": "Error.stackTraceLimit",
+        "op": "final-observed-value (sentinel was 3)",
+        "value": 3,
+        "restoredBySubject": true
+      }
+    ],
+    "deprecationsEmitted": [
+      "cookies: \"keys\" argument; provide using options {\"keys\": [...]}"
+    ]
+  },
+  "snapshots": {
+    "before": {
+      "label": "before-require",
+      "identities": {
+        "http.OutgoingMessage.prototype.setHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.getHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.removeHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.end": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.ServerResponse.prototype.writeHead": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.IncomingMessage.prototype.destroy": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.createServer": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.createHmac": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.timingSafeEqual": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.pseudoRandomBytes": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.randomBytes": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Object.assign": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Module._load": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Module._resolveFilename": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "process.binding": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Error.captureStackTrace": {
+          "sameAsBaseline": true,
+          "type": "function"
+        }
+      },
+      "descriptors": {
+        "http.OutgoingMessage.prototype.setHeader": {
+          "type": "function",
+          "fnName": "setHeader",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        },
+        "crypto.createHmac": {
+          "type": "function",
+          "fnName": "createHmac",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        },
+        "Object.assign": {
+          "type": "function",
+          "fnName": "assign",
+          "writable": true,
+          "enumerable": false,
+          "configurable": true,
+          "accessor": false
+        },
+        "Error.prepareStackTrace": {
+          "type": "function",
+          "fnName": "ErrorPrepareStackTrace",
+          "writable": true,
+          "enumerable": false,
+          "configurable": true,
+          "accessor": false
+        },
+        "Error.stackTraceLimit": {
+          "type": "number",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        }
+      },
+      "errorState": {
+        "prepareStackTrace": "function:ErrorPrepareStackTrace",
+        "stackTraceLimit": 10
+      },
+      "requireCache": {
+        "count": 1,
+        "builtinStyleEntries": []
+      }
+    },
+    "afterRequire": {
+      "label": "after-require",
+      "identities": {
+        "http.OutgoingMessage.prototype.setHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.getHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.removeHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.end": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.ServerResponse.prototype.writeHead": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.IncomingMessage.prototype.destroy": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.createServer": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.createHmac": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.timingSafeEqual": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.pseudoRandomBytes": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.randomBytes": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Object.assign": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Module._load": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Module._resolveFilename": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "process.binding": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Error.captureStackTrace": {
+          "sameAsBaseline": true,
+          "type": "function"
+        }
+      },
+      "descriptors": {
+        "http.OutgoingMessage.prototype.setHeader": {
+          "type": "function",
+          "fnName": "setHeader",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        },
+        "crypto.createHmac": {
+          "type": "function",
+          "fnName": "createHmac",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        },
+        "Object.assign": {
+          "type": "function",
+          "fnName": "assign",
+          "writable": true,
+          "enumerable": false,
+          "configurable": true,
+          "accessor": false
+        },
+        "Error.prepareStackTrace": {
+          "type": "function",
+          "fnName": "ErrorPrepareStackTrace",
+          "writable": true,
+          "enumerable": false,
+          "configurable": true,
+          "accessor": false
+        },
+        "Error.stackTraceLimit": {
+          "type": "number",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        }
+      },
+      "errorState": {
+        "prepareStackTrace": "function:ErrorPrepareStackTrace",
+        "stackTraceLimit": 10
+      },
+      "requireCache": {
+        "count": 5,
+        "builtinStyleEntries": []
+      }
+    },
+    "afterExercise": {
+      "label": "after-exercise",
+      "identities": {
+        "http.OutgoingMessage.prototype.setHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.getHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.removeHeader": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.OutgoingMessage.prototype.end": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.ServerResponse.prototype.writeHead": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.IncomingMessage.prototype.destroy": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "http.createServer": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.createHmac": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.timingSafeEqual": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.pseudoRandomBytes": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "crypto.randomBytes": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Object.assign": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Module._load": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Module._resolveFilename": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "process.binding": {
+          "sameAsBaseline": true,
+          "type": "function"
+        },
+        "Error.captureStackTrace": {
+          "sameAsBaseline": true,
+          "type": "function"
+        }
+      },
+      "descriptors": {
+        "http.OutgoingMessage.prototype.setHeader": {
+          "type": "function",
+          "fnName": "setHeader",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        },
+        "crypto.createHmac": {
+          "type": "function",
+          "fnName": "createHmac",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        },
+        "Object.assign": {
+          "type": "function",
+          "fnName": "assign",
+          "writable": true,
+          "enumerable": false,
+          "configurable": true,
+          "accessor": false
+        },
+        "Error.prepareStackTrace": {
+          "type": "function",
+          "fnName": "ErrorPrepareStackTrace",
+          "writable": true,
+          "enumerable": false,
+          "configurable": true,
+          "accessor": false
+        },
+        "Error.stackTraceLimit": {
+          "type": "number",
+          "writable": true,
+          "enumerable": true,
+          "configurable": true,
+          "accessor": false
+        }
+      },
+      "errorState": {
+        "prepareStackTrace": "function:ErrorPrepareStackTrace",
+        "stackTraceLimit": 10
+      },
+      "requireCache": {
+        "count": 5,
+        "builtinStyleEntries": []
+      }
+    }
+  },
+  "diffs": {
+    "beforeVsAfterRequire": {
+      "identityChanges": [],
+      "protoKeyChanges": {},
+      "errorState": {
+        "prepareStackTrace": [
+          "function:ErrorPrepareStackTrace",
+          "function:ErrorPrepareStackTrace"
+        ],
+        "stackTraceLimit": [
+          10,
+          10
+        ],
+        "changed": false
+      },
+      "globalKeyChanges": "none",
+      "requireExtensionsChanges": "none",
+      "requireCacheBuiltinEntries": [
+        [],
+        []
+      ],
+      "requireCacheAddedEntries": [
+        "$PACKAGE_ROOT/index.js",
+        "$PACKAGE_ROOT/node_modules/depd/index.js",
+        "$PACKAGE_ROOT/node_modules/keygrip/index.js",
+        "$PACKAGE_ROOT/node_modules/tsscmp/lib/index.js"
+      ]
+    },
+    "afterRequireVsAfterExercise": {
+      "identityChanges": [],
+      "protoKeyChanges": {},
+      "errorState": {
+        "prepareStackTrace": [
+          "function:ErrorPrepareStackTrace",
+          "function:ErrorPrepareStackTrace"
+        ],
+        "stackTraceLimit": [
+          10,
+          10
+        ],
+        "changed": false
+      },
+      "globalKeyChanges": "none",
+      "requireExtensionsChanges": "none",
+      "requireCacheBuiltinEntries": [
+        [],
+        []
+      ],
+      "requireCacheAddedEntries": []
+    },
+    "beforeVsAfterExercise": {
+      "identityChanges": [],
+      "protoKeyChanges": {},
+      "errorState": {
+        "prepareStackTrace": [
+          "function:ErrorPrepareStackTrace",
+          "function:ErrorPrepareStackTrace"
+        ],
+        "stackTraceLimit": [
+          10,
+          10
+        ],
+        "changed": false
+      },
+      "globalKeyChanges": "none",
+      "requireExtensionsChanges": "none",
+      "requireCacheBuiltinEntries": [
+        [],
+        []
+      ],
+      "requireCacheAddedEntries": [
+        "$PACKAGE_ROOT/index.js",
+        "$PACKAGE_ROOT/node_modules/depd/index.js",
+        "$PACKAGE_ROOT/node_modules/keygrip/index.js",
+        "$PACKAGE_ROOT/node_modules/tsscmp/lib/index.js"
+      ]
+    }
+  }
+}

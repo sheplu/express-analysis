@@ -1,0 +1,21 @@
+node v24.19.0
+BEFORE require.extensions keys: .js, .json, .node
+AFTER-REQUIRE require.extensions keys: .handlebars, .hbs, .js, .json, .node
+
+=== DIFF after require("hbs") (before any rendering) ===
+  require.extensions keys: +[.handlebars, .hbs] -[]
+  Module._extensions keys: +[.handlebars, .hbs] -[]
+  require.cache size: 1 -> 50 (new entries all under $PACKAGE_ROOT: yes)
+
+rendered output 1: <layout>WORLD [partial-content] async:async-value
+</layout>
+rendered output 2 (cached): <layout>WORLD [partial-content] async:async-value
+</layout>
+
+=== DIFF after require + render (vs before) ===
+  require.extensions keys: +[.handlebars, .hbs] -[]
+  Module._extensions keys: +[.handlebars, .hbs] -[]
+  require.cache size: 1 -> 50 (new entries all under $PACKAGE_ROOT: yes)
+
+=== Behavioral check (core module loading) ===
+  require("<views>/plain.hbs") now returns typeof function; rendered via required template: plain:via-require

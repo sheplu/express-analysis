@@ -1,0 +1,46 @@
+{
+  "nodeVersion": "v24.19.0",
+  "package": "multiparty@4.3.1 ($PACKAGE_ROOT/index.js)",
+  "note": "Error.stackTraceLimit was pre-set to 3 (default 10) to make transient raises observable; restored at exit.",
+  "exerciseError": null,
+  "exerciseOutcome": {
+    "parseError": null,
+    "fields": {
+      "title": [
+        "hello world"
+      ]
+    },
+    "fileFieldNames": [
+      "upload"
+    ],
+    "file": {
+      "originalFilename": "sample.txt",
+      "size": 25,
+      "contentsMatch": true
+    },
+    "httpStatus": 200,
+    "responseBody": "ok"
+  },
+  "trapEvents": [
+    {
+      "phase": "require",
+      "prop": "prepareStackTrace",
+      "from": "function ErrorPrepareStackTrace",
+      "to": "function prepareObjectStackTrace",
+      "stackTraceLimitAtEvent": 3
+    },
+    {
+      "phase": "require",
+      "prop": "prepareStackTrace",
+      "from": "function prepareObjectStackTrace",
+      "to": "function ErrorPrepareStackTrace",
+      "stackTraceLimitAtEvent": 10
+    }
+  ],
+  "diff_before_vs_afterRequire": [],
+  "diff_before_vs_afterExercise": [],
+  "finalState": {
+    "Error.prepareStackTrace": "function ErrorPrepareStackTrace",
+    "Error.stackTraceLimit": "number 3"
+  }
+}

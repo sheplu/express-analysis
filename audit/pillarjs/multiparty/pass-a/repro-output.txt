@@ -1,0 +1,16 @@
+require succeeded with sentinel prepareStackTrace installed: yes (depd must have swapped in its own prepareStackTrace during getStack)
+Error.prepareStackTrace restored to sentinel after require: true
+Error.stackTraceLimit restored after require: true (value: 5)
+sentinel invocations during require: 0
+node version: v24.19.0
+safe-buffer module === core buffer module: true
+safe-buffer .Buffer === core Buffer: true
+inherits === util.inherits: true
+setprototypeof === Object.setPrototypeOf: true
+Form.prototype proto is stream.Writable.prototype: true
+parse result: {"alpha":["beta"]}
+core surface diffs after load+parse: NONE
+Error.prepareStackTrace final: function ErrorPrepareStackTrace(error, trace) {
+  return internalPrepareStackTrace(error, trace);
+}
+Error.stackTraceLimit final: 10

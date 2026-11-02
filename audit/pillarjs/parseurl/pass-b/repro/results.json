@@ -1,0 +1,77 @@
+{
+  "nodeVersion": "v24.19.0",
+  "packageUnderTest": "parseurl @ $PACKAGE_ROOT",
+  "identityChangesAfterRequire": [],
+  "exercise": {
+    "fastPathMemoized": true,
+    "parsedIsUrlInstance": true,
+    "parsedOwnProps": [
+      "_raw",
+      "auth",
+      "hash",
+      "host",
+      "hostname",
+      "href",
+      "path",
+      "pathname",
+      "port",
+      "protocol",
+      "query",
+      "search",
+      "slashes"
+    ],
+    "parsedOwnPropsShadowUrlPrototype": [],
+    "parsedProtoIsUrlPrototype": true,
+    "changedUrlReparsed": true,
+    "slowPathIsUrlInstance": true,
+    "slowPathHost": "example.com",
+    "originalMemoized": true,
+    "originalIsUrlInstance": true,
+    "reqOwnPropsAddedByScriptAndLibrary": [
+      "_parsedOriginalUrl",
+      "_parsedUrl",
+      "originalUrl"
+    ],
+    "reqOwnPropsAddedByLibrary": [
+      "_parsedOriginalUrl",
+      "_parsedUrl"
+    ],
+    "addedPropsShadowingIncomingMessagePrototype": [],
+    "addedPropsShadowingCoreOwnProps": [],
+    "addedPropDescriptors": {
+      "_parsedOriginalUrl": {
+        "writable": true,
+        "enumerable": true,
+        "configurable": true,
+        "kind": "object"
+      },
+      "_parsedUrl": {
+        "writable": true,
+        "enumerable": true,
+        "configurable": true,
+        "kind": "object"
+      }
+    },
+    "cachedObjectType": "core Url instance"
+  },
+  "identityChangesAfterExercise": [],
+  "snapshotDiffs": {
+    "requireCacheKeys": {
+      "added": [
+        "$PACKAGE_ROOT/index.js"
+      ],
+      "removed": []
+    }
+  },
+  "requireCacheAdded": {
+    "added": [
+      "$PACKAGE_ROOT/index.js"
+    ],
+    "removed": []
+  },
+  "requireCacheBuiltinEntries": [],
+  "verdictHints": {
+    "anyCoreIdentityChanged": false,
+    "anySnapshotKeyDiffBesidesRequireCache": false
+  }
+}

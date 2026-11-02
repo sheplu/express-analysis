@@ -1,0 +1,27 @@
+node version: v24.19.0
+
+--- diff: before require -> after require(send) ---
+require-phase: 0 difference(s) (require.cache module count 1 -> 24)
+
+--- exercised runtime paths ---
+GET /hello.txt            -> 200 len=42 etag=true accept-ranges=bytes
+GET /hello.txt (Range 0-4)-> 206 body="hello" content-range=bytes 0-4/42
+GET /missing.txt          -> 404
+
+--- diff: after require -> after serving 200/206/404 ---
+exercise-phase: 0 difference(s) (require.cache module count 24 -> 24)
+
+--- per-instance observations (served responses) ---
+  /hello.txt: res own "assignSocket"=false (true would mean on-finished patchAssignSocket fired), res own "__onFinished"=true (library expando; true on streamed paths, false on the 404 path where the error listener short-circuits before onFinished attaches)
+  /hello.txt: res own "assignSocket"=false (true would mean on-finished patchAssignSocket fired), res own "__onFinished"=true (library expando; true on streamed paths, false on the 404 path where the error listener short-circuits before onFinished attaches)
+  /missing.txt: res own "assignSocket"=false (true would mean on-finished patchAssignSocket fired), res own "__onFinished"=false (library expando; true on streamed paths, false on the 404 path where the error listener short-circuits before onFinished attaches)
+
+--- Error.prepareStackTrace write trap log ---
+  phase=require wrote function prepareObjectStackTrace (Error.stackTraceLimit at write: 10)
+  phase=require wrote function ErrorPrepareStackTrace (Error.stackTraceLimit at write: 10)
+steady-state Error.prepareStackTrace: function ErrorPrepareStackTrace(error, trace) {
+  return internalPrepareStackTrace(error, trace);
+}
+steady-state Error.stackTraceLimit: 10
+
+SUMMARY: require-phase diffs=0, exercise-phase diffs=0, transient prepareStackTrace writes=2
