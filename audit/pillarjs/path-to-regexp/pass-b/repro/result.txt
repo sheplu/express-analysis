@@ -1,0 +1,38 @@
+node v24.19.0
+baseline intrinsic RegExp own keys: [lastIndex]
+imported exports: [PathError,compile,match,parse,pathToRegexp,stringify]
+exercised: pathToRegexp('/user/:name').regexp => ^(?:\/user\/([^\/]+)(?:\/$)?)$ keys=param:name
+exercised: pathToRegexp('/files/*path').regexp => ^(?:\/files\/([^]+)(?:\/$)?)$ keys=wildcard:path
+exercised: pathToRegexp(array,{end:false,sensitive:true}) => ^(?:\/a\/([^\/]+)(?:\/$)?|\/c\/([^\/]+)(?:\/$)?|\/c(?:\/$)?)(?=\/|$) keys=param:b,param:d
+exercised: pathToRegexp('/x/:"custom name"') => ^(?:\/x\/([^\/]+)(?:\/$)?)$ keys=param:custom name
+exercised: match('/user/:id')('/user/123%2Fabc') => {"path":"/user/123%2Fabc","params":{"id":"123/abc"}}
+exercised: match('/files/*path')('/files/a/b/c') => {"path":"/files/a/b/c","params":{"path":["a","b","c"]}}
+exercised: compile('/user/:name')({name:'café au lait'}) => /user/caf%C3%A9%20au%20lait
+exercised: compile('/files/*path')({path:['a b','c']}) => /files/a%20b/c
+exercised: stringify(parse('/:a{/:b}/*rest')) => /:a{/:b}/*rest
+exercised: parse('/:') throws PathError => instanceof TypeError=true, proto chain mutation of TypeError.prototype=none-expected
+returned regexp (/user/:name): own keys [lastIndex]; expandos beyond intrinsic baseline: [none]; [[Prototype]]===RegExp.prototype: true; constructor===RegExp: true; keys delivered as sibling property of plain result object (not on the RegExp)
+returned regexp (/files/*path): own keys [lastIndex]; expandos beyond intrinsic baseline: [none]; [[Prototype]]===RegExp.prototype: true; constructor===RegExp: true; keys delivered as sibling property of plain result object (not on the RegExp)
+returned regexp (array): own keys [lastIndex]; expandos beyond intrinsic baseline: [none]; [[Prototype]]===RegExp.prototype: true; constructor===RegExp: true; keys delivered as sibling property of plain result object (not on the RegExp)
+returned regexp (quoted): own keys [lastIndex]; expandos beyond intrinsic baseline: [none]; [[Prototype]]===RegExp.prototype: true; constructor===RegExp: true; keys delivered as sibling property of plain result object (not on the RegExp)
+---- BEFORE/AFTER core-surface diff ----
+OK key set RegExp (statics) unchanged (24 keys)
+OK key set RegExp.prototype unchanged (20 keys)
+OK key set String.prototype unchanged (53 keys)
+OK key set Object.prototype unchanged (12 keys)
+OK key set Array.prototype unchanged (42 keys)
+OK key set Function.prototype unchanged (10 keys)
+OK key set TypeError.prototype unchanged (3 keys)
+OK key set globalThis unchanged (136 keys)
+OK key set require.extensions unchanged (3 keys)
+OK RegExp.prototype: 20 properties, identities and descriptors unchanged
+OK RegExp (statics): 7 properties, identities and descriptors unchanged
+OK Object (statics): 7 properties, identities and descriptors unchanged
+OK String.prototype: 7 properties, identities and descriptors unchanged
+OK Module (CJS loader): 4 properties, identities and descriptors unchanged
+OK Module.prototype: 3 properties, identities and descriptors unchanged
+OK process: 3 properties, identities and descriptors unchanged
+OK globalThis fns: 4 properties, identities and descriptors unchanged
+OK require.cache builtin-like entries: 0 (size 1 -> 1; ESM import does not use require.cache)
+TOTAL CORE SURFACE CHANGES: 0
+VERDICT SUPPORT: no runtime mutation of any snapshotted core surface

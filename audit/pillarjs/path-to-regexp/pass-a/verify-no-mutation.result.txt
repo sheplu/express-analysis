@@ -1,0 +1,5 @@
+command: node verify-no-mutation.mjs "$NPM_ARTIFACT/dist/index.js"
+runtime: node v24.19.0
+result (2 consecutive runs):
+NO MUTATION DETECTED
+NO MUTATION DETECTED

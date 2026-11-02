@@ -1,0 +1,54 @@
+node: v24.19.0
+--- SNAPSHOT BEFORE require ---
+snapshot taken
+--- require artifact ---
+exports: ["encodeUrl"]
+typeof encodeUrl: function
+--- exercise encodeUrl ---
+  plain (no encoding needed):
+    in : http://localhost/foo/bar.html?fizz=buzz#readme
+    out: http://localhost/foo/bar.html?fizz=buzz#readme
+    stable across repeat call: true
+  already encoded:
+    in : http://example.com/a%20b?q=caf%C3%A9
+    out: http://example.com/a%20b?q=caf%C3%A9
+    stable across repeat call: true
+  mixed raw + encoded:
+    in : http://example.com/a%20b c<d>`{e}
+    out: http://example.com/a%20b%20c%3Cd%3E%60%7Be%7D
+    stable across repeat call: true
+  malformed percent (%foo, %2, trailing %):
+    in : http://example.com/%foo/%2/x%
+    out: http://example.com/%25foo/%252/x%25
+    stable across repeat call: true
+  unpaired surrogate:
+    in : http://example.com/\uD800foo\uDC00bar
+    out: http://example.com/%EF%BF%BDfoo%EF%BF%BDbar
+    stable across repeat call: true
+--- SNAPSHOT AFTER require + exercise ---
+snapshot taken
+--- DIFF ---
+[identity] encodeURI: UNCHANGED
+[identity] encodeURIComponent: UNCHANGED
+[identity] decodeURI: UNCHANGED
+[identity] String.prototype.replace: UNCHANGED
+[identity] RegExp.prototype.exec (descriptor value): UNCHANGED
+[identity] RegExp.prototype[Symbol.replace] (descriptor value): UNCHANGED
+[identity] Object.assign: UNCHANGED
+[identity] Module._load: UNCHANGED
+[identity] Module._resolveFilename: UNCHANGED
+[identity] process.binding: UNCHANGED
+[keys] String.prototype own keys: UNCHANGED
+[keys] RegExp.prototype own keys: UNCHANGED
+[keys] Object.prototype own keys: UNCHANGED
+[keys] Array.prototype own keys: UNCHANGED
+[keys] Function.prototype own keys: UNCHANGED
+[keys] globalThis own keys: UNCHANGED
+[keys] require.extensions keys: UNCHANGED
+[keys] require.cache keys (sanitized): added=["$NPM_ARTIFACT/dist/index.js"] removed=[]
+[keys] require.cache builtin (node:*) entries after: []
+[descriptor] RegExp.prototype.exec: UNCHANGED {"hasValue":true,"valueType":"function","writable":true,"enumerable":false,"configurable":true,"get":"undefined","set":"undefined"}
+[descriptor] RegExp.prototype[Symbol.replace]: UNCHANGED {"hasValue":true,"valueType":"function","writable":true,"enumerable":false,"configurable":true,"get":"undefined","set":"undefined"}
+[descriptor] String.prototype.replace: UNCHANGED {"hasValue":true,"valueType":"function","writable":true,"enumerable":false,"configurable":true,"get":"undefined","set":"undefined"}
+--- RESULT ---
+NO MUTATION DETECTED: all tracked identities, key sets, and descriptors unchanged.

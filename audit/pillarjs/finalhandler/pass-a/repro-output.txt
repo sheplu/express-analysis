@@ -1,0 +1,8 @@
+[1] core prototype diffs after import: none
+[1] process.env.DEBUG unchanged: true
+[2] 404 status: 404 | error status: 500
+[2] core prototype diffs after request cycle: none
+[3] fresh ServerResponse socket value: null
+[3] res has OWN assignSocket after on-finished (patchAssignSocket fired?): false
+[3] ServerResponse.prototype.assignSocket identity unchanged: true
+RESULT: no core prototype/global mutation observed; patchAssignSocket dormant

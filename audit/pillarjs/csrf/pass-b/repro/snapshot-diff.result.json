@@ -1,0 +1,175 @@
+{
+  "nodeVersion": "v24.19.0",
+  "exercise": {
+    "newTokens": true,
+    "factoryCall": true,
+    "secretAsyncLength": 24,
+    "secretCallbackLength": 24,
+    "secretSyncLength": 24,
+    "tokenShape": true,
+    "verifyTrue": true,
+    "verifyFalseWrongSecret": true,
+    "verifyFalseMalformed": true
+  },
+  "identityChecks": {
+    "crypto.createHash": true,
+    "crypto.createHmac": true,
+    "crypto.randomBytes": true,
+    "crypto.timingSafeEqual": true,
+    "crypto.pseudoRandomBytes": true,
+    "crypto.Hash": true,
+    "crypto.Hash.prototype.update": true,
+    "crypto.Hash.prototype.digest": true,
+    "Math.random": true,
+    "Object.assign": true,
+    "Module._load": true,
+    "Module._resolveFilename": true,
+    "process.binding": true,
+    "Promise": true,
+    "setTimeout": true
+  },
+  "descriptorDiffs": {},
+  "hashProtoKeysDiff": {
+    "added": [],
+    "removed": []
+  },
+  "protoKeysDiff": {
+    "Object": {
+      "added": [],
+      "removed": []
+    },
+    "Array": {
+      "added": [],
+      "removed": []
+    },
+    "String": {
+      "added": [],
+      "removed": []
+    },
+    "Function": {
+      "added": [],
+      "removed": []
+    },
+    "Promise": {
+      "added": [],
+      "removed": []
+    }
+  },
+  "requireExtensionsDiff": {
+    "added": [],
+    "removed": []
+  },
+  "requireCacheBuiltinEntriesDiff": {
+    "added": [],
+    "removed": []
+  },
+  "requireCacheGrewBy": 5,
+  "requireCacheNewEntries": [
+    "$PACKAGE_ROOT/index.js",
+    "$PACKAGE_ROOT/node_modules/random-bytes/index.js",
+    "$PACKAGE_ROOT/node_modules/rndm/index.js",
+    "$PACKAGE_ROOT/node_modules/tsscmp/lib/index.js",
+    "$PACKAGE_ROOT/node_modules/uid-safe/index.js"
+  ],
+  "globalKeysDiff": {
+    "added": [],
+    "removed": []
+  },
+  "cryptoBefore": {
+    "createHash": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "createHmac": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "randomBytes": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "timingSafeEqual": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "pseudoRandomBytes": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": false,
+      "configurable": true
+    },
+    "pseudoEqualsRandom": true
+  },
+  "cryptoAfter": {
+    "createHash": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "createHmac": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "randomBytes": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "timingSafeEqual": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": true,
+      "configurable": true
+    },
+    "pseudoRandomBytes": {
+      "hasValue": true,
+      "valueType": "function",
+      "get": "undefined",
+      "set": "undefined",
+      "writable": true,
+      "enumerable": false,
+      "configurable": true
+    },
+    "pseudoEqualsRandom": true
+  },
+  "VERDICT": "NO CORE MUTATION OBSERVED"
+}

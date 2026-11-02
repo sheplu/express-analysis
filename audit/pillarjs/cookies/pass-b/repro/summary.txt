@@ -1,0 +1,27 @@
+# Pass B repro run summary
+# command: node repro.js "$PACKAGE_ROOT"
+
+node: v24.19.0
+import-time trap events: 7
+  set Error.prepareStackTrace -> function:prepareObjectStackTrace
+  set Error.captureStackTrace -> undefined
+  set Error.prepareStackTrace -> function:ErrorPrepareStackTrace
+  set Error.prepareStackTrace -> function:prepareObjectStackTrace
+  set Error.captureStackTrace -> undefined
+  set Error.prepareStackTrace -> function:ErrorPrepareStackTrace
+  set Error.stackTraceLimit -> undefined
+runtime (deprecated path) trap events: 4
+  set Error.prepareStackTrace -> function:prepareObjectStackTrace
+  set Error.captureStackTrace -> undefined
+  set Error.prepareStackTrace -> function:ErrorPrepareStackTrace
+  set Error.stackTraceLimit -> undefined
+deprecations emitted: 1
+signed cookie round trip verified: true
+set-cookie headers: ["session=value123; path=/; httponly","session.sig=hTh6dFNQzkG_WRUoIEfc2QIYKLg; path=/; httponly"]
+identity changes before->afterExercise: []
+proto key changes before->afterExercise: {}
+Error state before/afterRequire/afterExercise: [{"prepareStackTrace":"function:ErrorPrepareStackTrace","stackTraceLimit":10},{"prepareStackTrace":"function:ErrorPrepareStackTrace","stackTraceLimit":10},{"prepareStackTrace":"function:ErrorPrepareStackTrace","stackTraceLimit":10}]
+global key changes: "none"
+require.extensions changes: "none"
+builtin-style require.cache entries: []
+results written to results.json

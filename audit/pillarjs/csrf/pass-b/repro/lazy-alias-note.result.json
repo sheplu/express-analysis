@@ -1,0 +1,21 @@
+{
+  "nodeVersion": "v24.19.0",
+  "descriptorBeforeLoad": {
+    "kind": "accessor",
+    "get": "function",
+    "set": "function",
+    "enumerable": false,
+    "configurable": true
+  },
+  "descriptorAfterLoad": {
+    "kind": "data",
+    "get": "undefined",
+    "set": "undefined",
+    "writable": true,
+    "enumerable": false,
+    "configurable": true
+  },
+  "resolvedValueIsCoreRandomBytes": true,
+  "randomBytesUntouched": true,
+  "conclusion": "descriptor transition (if any) is core lazy-alias self-resolution; no library function installed"
+}

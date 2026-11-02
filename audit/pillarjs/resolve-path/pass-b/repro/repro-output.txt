@@ -1,0 +1,33 @@
+Node runtime: v24.19.0
+descriptor(Error, prepareStackTrace) BEFORE: {"hasValue":true,"valueType":"function","get":"undefined","set":"undefined","writable":true,"enumerable":false,"configurable":true}
+descriptor(Error, stackTraceLimit) BEFORE: {"hasValue":true,"valueType":"number","get":"undefined","set":"undefined","writable":true,"enumerable":true,"configurable":true}
+
+=== Accessor trap log (transient swaps observed) ===
+--- require(resolve-path) begins ---
+SET Error.prepareStackTrace = function prepareObjectStackTrace | Error.stackTraceLimit at this moment = 10
+SET Error.prepareStackTrace = function ErrorPrepareStackTrace | Error.stackTraceLimit at this moment = 2
+SET Error.prepareStackTrace = function prepareObjectStackTrace | Error.stackTraceLimit at this moment = 10
+SET Error.prepareStackTrace = function ErrorPrepareStackTrace | Error.stackTraceLimit at this moment = 10
+SET Error.prepareStackTrace = function prepareObjectStackTrace | Error.stackTraceLimit at this moment = 10
+SET Error.prepareStackTrace = function ErrorPrepareStackTrace | Error.stackTraceLimit at this moment = 10
+--- require(resolve-path) done ---
+--- exercise begins ---
+--- exercise done ---
+
+=== Exercise results ===
+success case: resolved to $PACKAGE_ROOT/index.js
+traversal ../x: threw name=ForbiddenError status=403 statusCode=403 msg="Forbidden" ctor=ClientError instanceof HttpError=true instanceof Error=true Object.getPrototypeOf(err)===createError[403].prototype=true
+NUL byte a\0b: threw name=BadRequestError status=400 statusCode=400 msg="Malicious Path" ctor=ClientError instanceof HttpError=true instanceof Error=true Object.getPrototypeOf(err)===createError[400].prototype=true
+absolute /etc/passwd: threw name=BadRequestError status=400 statusCode=400 msg="Malicious Path" ctor=ClientError instanceof HttpError=true instanceof Error=true Object.getPrototypeOf(err)===createError[400].prototype=true
+setprototypeof export === Object.setPrototypeOf (native reference, no wrap): true
+path-is-absolute export === path.isAbsolute (should be false; ponyfill): false
+path.isAbsolute identity unchanged after requiring path-is-absolute: true
+
+=== Final values after restore ===
+Error.prepareStackTrace: function (before: function)
+Error.stackTraceLimit: 10 (before: 10)
+descriptor(Error, prepareStackTrace) AFTER: {"hasValue":true,"valueType":"function","get":"undefined","set":"undefined","writable":true,"enumerable":false,"configurable":true}
+descriptor(Error, stackTraceLimit) AFTER: {"hasValue":true,"valueType":"number","get":"undefined","set":"undefined","writable":true,"enumerable":true,"configurable":true}
+
+=== Snapshot diff (before-require vs after-require-and-exercise) ===
+require.cache: 9 new entries, 0 outside $PACKAGE_ROOT/$HOME: []

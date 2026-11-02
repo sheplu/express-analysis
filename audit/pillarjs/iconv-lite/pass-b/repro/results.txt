@@ -1,0 +1,26 @@
+# iconv-lite pass-b runtime reproduction results
+
+Node runtime: v24.19.0
+Package: iconv-lite (loaded from $PACKAGE_ROOT)
+
+## Exercised paths
+- snapshot BEFORE import taken
+- imported node entrypoint (lib/index-node.js, i.e. exports['.'].node)
+- sbcs: win1251 encode/decode round trip OK (12 bytes)
+- dbcs: gbk and shiftjis encode/decode round trips OK
+- utf16-be, utf8, base64, hex paths OK
+- node streams: encodeStream/decodeStream round trip OK
+- web streams: decodeWebStream OK
+- web entrypoint (lib/index-web.js) with web backend OK
+- subpath export encodings/utf7.js loads OK
+- snapshot AFTER import + exercise taken
+
+## Core-surface diff (before import vs after import + exercise)
+
+Surfaces compared: Buffer statics + prototype, StringDecoder statics + prototype,
+stream Transform/Duplex/Readable/Writable/PassThrough prototypes,
+Object/Array/String/Function/Uint8Array prototypes, Object statics (incl. assign),
+Module._load/_resolveFilename/_extensions, process.binding, require.extensions keys,
+require.cache non-file entries, globalThis own keys, and 33 pinned function identities.
+
+RESULT: NO DIFFERENCES DETECTED. No core mutation observed at runtime.
