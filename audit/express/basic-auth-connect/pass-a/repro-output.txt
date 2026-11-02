@@ -1,0 +1,19 @@
+UNCHANGED  STATUS_CODES
+UNCHANGED  IncomingMessage
+UNCHANGED  ServerResponse
+UNCHANGED  imProtoKeys
+UNCHANGED  srProtoKeys
+UNCHANGED  srStatusCodeDesc
+UNCHANGED  setHeader
+UNCHANGED  end
+UNCHANGED  timingSafeEqual
+UNCHANGED  createHmac
+UNCHANGED  pseudoRandomBytes
+UNCHANGED  BufferCtor
+UNCHANGED  bufferProtoKeys
+UNCHANGED  moduleLoad
+UNCHANGED  moduleCompile
+UNCHANGED  requireExtensions
+UNCHANGED  globalKeys
+req own props after success: headers,remoteUser,user
+RESULT: no core/global/prototype mutation observed

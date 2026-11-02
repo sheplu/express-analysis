@@ -1,0 +1,21 @@
+[require time]
+  Error.prepareStackTrace write count during require (depd): 6
+  Error.prepareStackTrace writes (types): ["function","function","function","function","function","function"]
+  default Error.prepareStackTrace present before require (Node >=21): function
+  Error.prepareStackTrace restored to initial value after require: true
+  Error.stackTraceLimit restored after require: true
+  ServerResponse.prototype.writeHead unchanged: true
+  ServerResponse.prototype.assignSocket unchanged: true
+[after middleware ran on one request]
+  res had own writeHead before middleware: false
+  res has own writeHead after middleware (on-headers override): true
+  res.writeHead !== ServerResponse.prototype.writeHead: true
+  ServerResponse.prototype.writeHead still unchanged: true
+  res has own assignSocket (on-finished node-0.8 patch fired?): false
+  ServerResponse.prototype.assignSocket still unchanged: true
+  res.socket value is null (not undefined): true
+  res has own __onFinished key (on-finished): true
+  req has own timedout key: true | value: false
+  req has own clearTimeout key: true
+  core IncomingMessage.prototype has timedout member: false
+  core IncomingMessage.prototype has clearTimeout member: false

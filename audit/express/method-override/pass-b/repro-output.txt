@@ -1,0 +1,9 @@
+node version: v24.19.0
+shared-state diffs after require(): none
+IncomingMessage.prototype has own "method" property: false
+req.method before middleware: POST (sent on wire)
+descriptor of own "method" before mw: {"value":"POST","writable":true,"enumerable":true,"configurable":true}
+req.method after middleware: DELETE
+req.originalMethod after middleware: POST
+descriptor of own "method" after mw: {"value":"DELETE","writable":true,"enumerable":true,"configurable":true}
+shared-state diffs after request handling: none

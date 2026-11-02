@@ -1,0 +1,10 @@
+[require] Error.prepareStackTrace writes during require: ["prepareObjectStackTrace","ErrorPrepareStackTrace"]
+[require] pre-require Error.prepareStackTrace: ErrorPrepareStackTrace
+[require] Error.prepareStackTrace restored to pre-require value: true
+[require] ServerResponse.prototype.writeHead identity unchanged: true
+[request] res own-property writeHead before middleware: false
+[request] res own-property writeHead after middleware: true
+[request] res.writeHead shadows prototype method: true
+[request] replacement function name: writeHead
+[client] x-response-time header present: true
+[after] ServerResponse.prototype.writeHead identity unchanged: true

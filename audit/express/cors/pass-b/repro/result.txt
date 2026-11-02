@@ -1,0 +1,4 @@
+after require(cors): no changes
+new own props on real ServerResponse instance: statusCode, statusMessage
+after middleware calls: no changes
+node v24.19.0
